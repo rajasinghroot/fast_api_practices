@@ -1,0 +1,15 @@
+<h2>Users</h2>
+<a href="/users/create">Add User</a> | <a href="/logout">Logout</a>
+<table border="1">
+<tr><th>Name</th><th>Email</th><th>Action</th></tr>
+{% for user in users %}
+<tr>
+<td>{{ user.name }}</td>
+<td>{{ user.email }}</td>
+<td>
+    <a href="/users/delete/{{ user.id }}"
+       onclick="return confirm('Delete user?')">Delete</a>
+</td>
+</tr>
+{% endfor %}
+</table>
